@@ -1,0 +1,85 @@
+﻿<Window x:Class="VendingMachine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Style="{StaticResource MainWindowStyle}"
+        Height="600" Width="450">
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Style="{StaticResource RowMarginStyle}"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            Content="Take ' Go"
+            Style="{StaticResource MainHeaderLblStyle}"/>
+
+        <Grid
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" SharedSizeGroup="ShowcaseWidth"/>
+                <ColumnDefinition Width="*" SharedSizeGroup="ControlPanelWidth" />
+            </Grid.ColumnDefinitions>
+            <ContentControl
+                    Grid.Column="0"/>
+            <Grid
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Style="{StaticResource RowMarginStyle}"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Style="{StaticResource RowMarginStyle}"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button
+                    Grid.Row="1"
+                    Content="Instruction"/>
+                <Label
+                    x:Name="SrceenLbl"
+                    Grid.Row="3"
+                    Style="{StaticResource ScreenLblStyle}"/>
+                <ContentControl
+                    Grid.Row="5"
+                    Template="{StaticResource PanelTemplate}"/>
+            </Grid>         
+        </Grid>
+        <Grid
+            Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition SharedSizeGroup="ShowcaseWidth"/>
+                <ColumnDefinition SharedSizeGroup="ControlPanelWidth"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                x:Name="productLbl"
+                Grid.Column="0"
+                Style="{StaticResource ProductcaseStyle}"
+                Content="Push"/>
+            <Grid
+                Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="1"
+                    Content="Change"/>
+                <Button
+                    x:Name="GetChangeBtn"
+                    Style="{StaticResource ChangeBtnStyle}"
+                    Grid.Row="3"/>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

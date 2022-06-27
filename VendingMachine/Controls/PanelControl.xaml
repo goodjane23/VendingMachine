@@ -1,0 +1,51 @@
+﻿<UserControl 
+    x:Class="VendingMachine.Controls.PanelControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:VendingMachine.Controls"
+    mc:Ignorable="d"
+    Width="120"
+    Height="160">
+    
+    <WrapPanel ItemHeight="40" ItemWidth="40" Orientation="Horizontal">
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Content="1"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="2"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="3"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="4"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="5"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="6"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="7"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="8"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="9"/>        
+        <Button
+              Style="{StaticResource ControlPanelOkButtonStyle}"
+            Content="Ok"/>
+        <Button
+              Style="{StaticResource ControlPanelButtonStyle}"
+            Content="0"/>
+        <Button
+              Style="{StaticResource ControlPanelCancelButtonStyle}"
+            Content="Del"/>
+
+    </WrapPanel>
+</UserControl>
