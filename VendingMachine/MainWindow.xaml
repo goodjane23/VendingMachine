@@ -27,7 +27,8 @@
                 <ColumnDefinition Width="*" SharedSizeGroup="ControlPanelWidth" />
             </Grid.ColumnDefinitions>
             <ContentControl
-                    Grid.Column="0"/>
+                Grid.Column="0"
+                Template="{Binding ShowcaseTemplate}"/>
             <Grid
                 Grid.Column="1">
                 <Grid.RowDefinitions>

@@ -7,5 +7,9 @@
         <controls:PanelControl />
     </ControlTemplate>
 
+    <ControlTemplate x:Key="ShowcaseTemplate">
+        <controls:ShowcaseControl />
+    </ControlTemplate>
+
 
 </ResourceDictionary>

@@ -55,7 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\MachineViewModel.cs" />
+    <Compile Include="ViewModels\ShowcaseViewModel.cs" />
     <Page Include="Controls\PanelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ShowcaseControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Controls\PanelControl.xaml.cs">
       <DependentUpon>PanelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShowcaseControl.xaml.cs">
+      <DependentUpon>ShowcaseControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -84,6 +93,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
