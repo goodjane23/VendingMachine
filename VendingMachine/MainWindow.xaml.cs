@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VendingMachine.ViewModels;
 
 namespace VendingMachine
 {
@@ -23,6 +24,9 @@ namespace VendingMachine
         public MainWindow()
         {
             InitializeComponent();
+            MachineViewModel locator = new MachineViewModel();
+            DataContext = locator;
+
         }
     }
 }

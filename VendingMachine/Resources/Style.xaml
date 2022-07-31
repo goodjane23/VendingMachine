@@ -16,7 +16,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Window">
                     <Border CornerRadius="5" Background="#ffcede" BorderBrush="Gray" BorderThickness="5" >
-                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}"  Margin="{TemplateBinding Padding}" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -161,7 +161,7 @@
         <Setter Property="ItemWidth" Value="40"/>
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
-        
-        
-    
+
+
+
 </ResourceDictionary>
