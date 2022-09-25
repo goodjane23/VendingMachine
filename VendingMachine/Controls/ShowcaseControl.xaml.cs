@@ -1,15 +1,11 @@
 ﻿using System.Windows.Controls;
 
-namespace VendingMachine.Controls
+namespace VendingMachine.Controls;
+
+public partial class ShowcaseControl : UserControl
 {
-    /// <summary>
-    /// Interaction logic for ShowcaseControl.xaml
-    /// </summary>
-    public partial class ShowcaseControl : UserControl
+    public ShowcaseControl()
     {
-        public ShowcaseControl()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

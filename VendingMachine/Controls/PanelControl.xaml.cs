@@ -1,16 +1,11 @@
 ﻿using System.Windows.Controls;
-using VendingMachine.ViewModels;
 
-namespace VendingMachine.Controls
+namespace VendingMachine.Controls;
+
+public partial class PanelControl : UserControl
 {
-    /// <summary>
-    /// Interaction logic for PanelControl.xaml
-    /// </summary>
-    public partial class PanelControl : UserControl
+    public PanelControl()
     {
-        public PanelControl()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
