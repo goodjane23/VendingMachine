@@ -22,7 +22,6 @@
     </Style>
     <!--#endregion-->
     
-    
     <!--#region Label-->
     
     <Style x:Key="MainHeaderLblStyle" TargetType="Label">
@@ -91,7 +90,12 @@
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="5" Background="LightGreen" BorderBrush="#ccc" BorderThickness="2" >
                         <Border CornerRadius="5" Background="LightGreen" BorderBrush="Green" BorderThickness="0,0,2,2" >
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Content="{TemplateBinding Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Border>
                 </ControlTemplate>
@@ -101,13 +105,17 @@
 
     <Style x:Key="ControlPanelCancelButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="#ff4b42"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="5" Background="#ff4b42"  BorderBrush="#ccc" BorderThickness="2" >
                         <Border CornerRadius="5" Background="#ff4b42" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >
-                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Content="{TemplateBinding Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Border>
                 </ControlTemplate>

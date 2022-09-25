@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VendingMachine.Views.Windows"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen"
         Style="{StaticResource MainWindowStyle}">
     <Grid 
         IsSharedSizeScope="True">
@@ -20,8 +21,7 @@
         </Grid.RowDefinitions>
 
         <Label
-            Grid.Row="1" 
-            HorizontalAlignment="Center"
+            Grid.Row="1"
             Content="Take ' Go"
             Style="{StaticResource MainHeaderLblStyle}"/>
 

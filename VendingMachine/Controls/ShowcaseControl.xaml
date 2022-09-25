@@ -3,7 +3,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:VendingMachine.Controls"
+    d:DataContext="{d:DesignInstance Type=controls:ShowcaseViewModel}"
     mc:Ignorable="d"
     Width="180"
     Height="230">

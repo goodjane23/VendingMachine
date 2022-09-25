@@ -6,50 +6,48 @@ namespace VendingMachine.ViewModels;
 
 public class MachineViewModel : ICommand
 {
-    public string Screen
+    public class MachineViewModel :  ICommand
     {
-        get;
-        private set;
-    }
+        public string Screen { get; private set; }
 
-    private ICommand _nuberClik;
-    private ICommand _okClick;
-    private ICommand _cancelClick;
-    ICommand NuberClik
-    {
-        get { return _nuberClik ?? (_nuberClik = new RelayCommand<int>(ToScreen)); }
-    }
+        private ICommand _numberClick;
+        private ICommand _okClick;
+        private ICommand _cancelClick;
+        public ICommand NumberClick
+        {
+            get { return _numberClick ?? (_numberClick = new RelayCommand<string>(ToScreen)); }
+        }
 
-    ICommand OkClick
-    {
-        get { return _okClick ?? (_okClick = new RelayCommand(PressedOkClick)); }
-    }
+        public ICommand OkClick
+        {
+            get { return _okClick ?? (_okClick = new RelayCommand(PressedOkClick)); } 
+        }
 
-    ICommand CancelClick
-    {
-        get { return _cancelClick ?? (_cancelClick = new RelayCommand(PressedCancelClick)); }
-    }
+        public ICommand CancelClick 
+        { 
+            get { return _cancelClick??(_cancelClick = new RelayCommand(PressedCancelClick)); } 
+        }
 
-    public MachineViewModel()
-    {
-
-    }
-
-    private void ToScreen(int num)
-    {
-        Screen += num;
-        if (Screen.Length > 2)
-            return;
-
-    }
-    private void PressedOkClick()
-    {
-
-    }
-    private void PressedCancelClick()
-    {
-
-    }
+        public MachineViewModel()
+        {
+           
+        }
+        
+        private void ToScreen(string num)
+        {
+            Screen += num;
+            if (Screen.Length > 2)
+                return;
+            
+        }
+        private void PressedOkClick()
+        {
+            Screen = "";
+        }
+        private void PressedCancelClick()
+        {
+            Screen = "__";
+        }
 
 
 
