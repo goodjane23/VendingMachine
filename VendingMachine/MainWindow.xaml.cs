@@ -24,7 +24,7 @@ namespace VendingMachine
         public MainWindow()
         {
             InitializeComponent();
-            MachineViewModel locator = new MachineViewModel();
+            var locator = new MachineViewModel();
             DataContext = locator;
 
         }

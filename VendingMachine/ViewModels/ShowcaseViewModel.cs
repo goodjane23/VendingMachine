@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VendingMachine.Models;
+﻿using GalaSoft.MvvmLight;
 
-namespace VendingMachine.ViewModels
+namespace VendingMachine.Controls
 {
-    internal class ShowcaseViewModel
+    public class ShowcaseViewModel : ViewModelBase
     {
-        public Product ProductList { get; set; }
     }
 }

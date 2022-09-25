@@ -10,24 +10,22 @@ namespace VendingMachine.ViewModels
 {
     public class MachineViewModel :  ICommand
     {
-        public string Screen { 
-            get; 
-            private set; }
+        public string Screen { get; private set; }
 
-        private ICommand _nuberClik;
+        private ICommand _numberClick;
         private ICommand _okClick;
         private ICommand _cancelClick;
-        ICommand NuberClik
+        public ICommand NumberClick
         {
-            get { return _nuberClik ?? (_nuberClik = new RelayCommand<int>(ToScreen)); }
+            get { return _numberClick ?? (_numberClick = new RelayCommand<string>(ToScreen)); }
         }
-        
-        ICommand OkClick
+
+        public ICommand OkClick
         {
             get { return _okClick ?? (_okClick = new RelayCommand(PressedOkClick)); } 
         }
 
-        ICommand CancelClick 
+        public ICommand CancelClick 
         { 
             get { return _cancelClick??(_cancelClick = new RelayCommand(PressedCancelClick)); } 
         }
@@ -37,7 +35,7 @@ namespace VendingMachine.ViewModels
            
         }
         
-        private void ToScreen( int num)
+        private void ToScreen(string num)
         {
             Screen += num;
             if (Screen.Length > 2)
@@ -46,11 +44,11 @@ namespace VendingMachine.ViewModels
         }
         private void PressedOkClick()
         {
-
+            Screen = "";
         }
         private void PressedCancelClick()
         {
-
+            Screen = "__";
         }
 
 
