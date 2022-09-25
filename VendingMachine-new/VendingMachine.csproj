@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>VendingMachine</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\DarkBluePotion.png" />
+    <None Remove="Resources\Images\GoldPotion.png" />
+    <None Remove="Resources\Images\GreenPotion.png" />
+    <None Remove="Resources\Images\OrangePotion.png" />
+    <None Remove="Resources\Images\RedPotion.png" />
+    <None Remove="Resources\Images\VioletPotion.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\DarkBluePotion.png" />
+    <Resource Include="Resources\Images\GoldPotion.png" />
+    <Resource Include="Resources\Images\GreenPotion.png" />
+    <Resource Include="Resources\Images\OrangePotion.png" />
+    <Resource Include="Resources\Images\RedPotion.png" />
+    <Resource Include="Resources\Images\VioletPotion.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\PanelControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ShowcaseControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Style.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\TemplateDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

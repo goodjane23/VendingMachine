@@ -1,0 +1,75 @@
+﻿<UserControl 
+    x:Class="VendingMachine.Controls.PanelControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d"  
+    xmlns:vm ="clr-namespace:VendingMachine.ViewModels"
+    Width="120"
+    Height="160">
+    
+    <WrapPanel
+        DataContext="{Binding vm:MachineViewModel}"
+        ItemHeight="40" ItemWidth="40" Orientation="Horizontal">
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="1"
+            Content="1"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="2"
+            Content="2"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="3"
+            Content="3"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="4"
+            Content="4"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="5"
+            Content="5"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="6"
+            Content="6"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="7"
+            Content="7"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="8"
+            Content="8"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="9"
+            Content="9"/>        
+        <Button
+            Style="{StaticResource ControlPanelOkButtonStyle}"
+            Command="{Binding OkClick}"
+            Content="Ok"/>
+        <Button
+            Style="{StaticResource ControlPanelButtonStyle}"
+            Command="{Binding NuberClik}"
+            CommandParameter="0"
+            Content="0"/>
+        <Button
+            Style="{StaticResource ControlPanelCancelButtonStyle}"
+            Command="{Binding CancelClick}"
+            Content="Del"/>
+
+    </WrapPanel>
+</UserControl>

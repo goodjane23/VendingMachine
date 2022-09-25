@@ -1,0 +1,52 @@
+﻿<UserControl 
+    x:Class="VendingMachine.Controls.ShowcaseControl"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    mc:Ignorable="d"
+    Width="180"
+    Height="230">
+    <WrapPanel Style="{StaticResource ShowcaseWrapPanelStyle}">
+
+        <Image
+            Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
+        <TextBlock/>
+        <Image
+             Source="pack://application:,,,/Resources/Images/GoldPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/GoldPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/DarkBluePotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/GreenPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/GreenPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/OrangePotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/OrangePotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/RedPotion.png"/>
+        <TextBlock/>
+        <Image
+            Source="pack://application:,,,/Resources/Images/RedPotion.png"/>
+        <TextBlock/>
+
+    </WrapPanel>
+
+
+</UserControl>
