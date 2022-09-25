@@ -1,8 +1,8 @@
-﻿using GalaSoft.MvvmLight;
+﻿using VendingMachine.Models;
 
-namespace VendingMachine.Controls
+namespace VendingMachine.ViewModels;
+
+internal class ShowcaseViewModel
 {
-    public class ShowcaseViewModel : ViewModelBase
-    {
-    }
+    public Product ProductList { get; set; }
 }

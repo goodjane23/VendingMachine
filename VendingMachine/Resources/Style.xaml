@@ -3,9 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!-- #region Window-->
-    <Style
-        x:Key="MainWindowStyle"
-        TargetType="Window">
+    <Style x:Key="MainWindowStyle" TargetType="Window">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="Background" Value="#ffcede"/>
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
@@ -26,16 +24,13 @@
     
     <!--#region Label-->
     
-    <Style
-        x:Key="MainHeaderLblStyle"
-        TargetType="Label">
+    <Style x:Key="MainHeaderLblStyle" TargetType="Label">
         <Setter Property="FontSize" Value="25"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-    <Style 
-        x:Key="ScreenLblStyle"
-        TargetType="Label">
+    
+    <Style  x:Key="ScreenLblStyle" TargetType="Label">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -51,9 +46,8 @@
         <Setter Property="Width" Value="120"/>
         <Setter Property="Height" Value="40"/>
     </Style>
-    <Style
-        x:Key="ProductcaseStyle"
-        TargetType="Label">
+    
+    <Style x:Key="ProductcaseStyle" TargetType="Label">
         <Setter Property="Background" Value="#c3c3c3"/>
         <Setter Property="Height" Value="80"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -74,9 +68,7 @@
   
     <!--#region Buttons-->
     
-    <Style
-        x:Key="ControlPanelButtonStyle"
-        TargetType="Button">
+    <Style x:Key="ControlPanelButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Pink"/>        
         <Setter Property="Template">
             <Setter.Value>
@@ -91,9 +83,7 @@
         </Setter>
     </Style>
 
-    <Style
-        x:Key="ControlPanelOkButtonStyle"
-        TargetType="Button">
+    <Style x:Key="ControlPanelOkButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="LightGreen"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -113,9 +103,7 @@
         </Setter>
     </Style>
 
-    <Style
-        x:Key="ControlPanelCancelButtonStyle"
-        TargetType="Button">
+    <Style x:Key="ControlPanelCancelButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="#ff4b42"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -135,9 +123,7 @@
         </Setter>
     </Style>
 
-    <Style
-        x:Key="ChangeBtnStyle"
-        TargetType="Button">
+    <Style x:Key="ChangeBtnStyle" TargetType="Button">
         <Setter Property="Background" Value="#c3c3c3"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Template">
@@ -155,21 +141,14 @@
     
     <!--#endregion-->
 
-    <Style
-        x:Key="RowMarginStyle"
-        TargetType="RowDefinition">
+    <Style x:Key="RowMarginStyle" TargetType="RowDefinition">
         <Setter Property="Height" Value="5"/>
     </Style>
 
-    <Style 
-        x:Key="ShowcaseWrapPanelStyle"
-        TargetType="WrapPanel">
+    <Style  x:Key="ShowcaseWrapPanelStyle" TargetType="WrapPanel">
         <Setter Property="Background" Value="LightGray"/>
         <Setter Property="ItemHeight" Value="40"/>
         <Setter Property="ItemWidth" Value="40"/>
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
-
-
-
 </ResourceDictionary>
