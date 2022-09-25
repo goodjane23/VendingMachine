@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
-namespace VendingMachine_new;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
+namespace VendingMachine;
+
 public partial class App : Application
 {
 }

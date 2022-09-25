@@ -1,12 +1,11 @@
 ﻿using System.Windows.Controls;
 
-namespace VendingMachine.Controls
+namespace VendingMachine.Controls;
+
+public partial class PanelControl : UserControl
 {
-    public partial class PanelControl : UserControl
+    public PanelControl()
     {
-        public PanelControl()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

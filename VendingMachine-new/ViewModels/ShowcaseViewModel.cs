@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VendingMachine.Models;
+﻿using VendingMachine.Models;
 
-namespace VendingMachine.ViewModels
+namespace VendingMachine.ViewModels;
+
+internal class ShowcaseViewModel
 {
-    internal class ShowcaseViewModel
-    {
-        public Product ProductList { get; set; }
-    }
+    public Product ProductList { get; set; }
 }
