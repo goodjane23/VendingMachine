@@ -2,9 +2,9 @@
 
 namespace VendingMachine.Controls;
 
-public partial class PanelControl : UserControl
+public partial class Showcase : UserControl
 {
-    public PanelControl()
+    public Showcase()
     {
         InitializeComponent();
     }
