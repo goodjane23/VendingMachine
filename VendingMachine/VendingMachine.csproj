@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,16 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Controls\PanelControl.xaml">
+    <Page Update="Controls\NumberPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\ShowcaseControl.xaml">
+    <Page Update="Controls\Showcase.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Resources\Style.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Resources\TemplateDictionary.xaml">
+    <Page Update="Resources\Styles\Style.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
