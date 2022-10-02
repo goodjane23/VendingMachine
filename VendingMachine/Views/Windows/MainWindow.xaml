@@ -56,6 +56,8 @@
                 <controls:NumberPanel
                     x:Name="panel"
                     Grid.Row="5"
+                    CancelClickCommand="{Binding CancelCommand}"
+                    OkClickCommand="{Binding OkCommand}"
                     ScreenText="{Binding DisplayText, Mode=TwoWay}" />
             </Grid>
         </Grid>

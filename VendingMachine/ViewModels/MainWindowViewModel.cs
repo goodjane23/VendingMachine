@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Windows;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace VendingMachine.ViewModels;
 
@@ -12,16 +14,12 @@ public class MainWindowViewModel : ObservableObject
         set => SetProperty(ref displayText, value);
     }
 
+    public ICommand OkCommand { get; }
+    public ICommand CancelCommand { get; }
+    
     public MainWindowViewModel()
     {
-        UpdateTextAfterDelay();
+        OkCommand = new RelayCommand(() => MessageBox.Show(DisplayText));
+        CancelCommand = new RelayCommand(() => DisplayText = "");
     }
-    
-    private void UpdateTextAfterDelay()
-    {
-        Task.Run(async () =>
-        {
-            await Task.Delay(2500);
-        }).ContinueWith(_ => DisplayText = "12345");
-    } 
 }
