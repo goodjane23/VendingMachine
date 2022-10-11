@@ -19,7 +19,7 @@ public class MainWindowViewModel : ObservableObject
     
     public MainWindowViewModel()
     {
-        OkCommand = new RelayCommand(() => MessageBox.Show(DisplayText));
+        OkCommand = new RelayCommand(() => MessageBox.Show($"Товар #{DisplayText}", "Выбран товар"));
         CancelCommand = new RelayCommand(() => DisplayText = "");
     }
 }
