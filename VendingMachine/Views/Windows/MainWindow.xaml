@@ -9,78 +9,77 @@
     Title="MainWindow"
     Style="{StaticResource MainWindowStyle}"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d" d:DesignWidth="645.4">
+    
     <Grid IsSharedSizeScope="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Style="{StaticResource RowMarginStyle}" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Style="{StaticResource RowMarginStyle}" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
         <Label
-            Grid.Row="1"
+            x:Name="Headerlbl"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
             Content="Take ' Go"
             Style="{StaticResource MainHeaderLblStyle}" />
-
-        <Grid Grid.Row="3">
+        
+        <Grid
+            Grid.Column="0"
+            Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
             <controls:Showcase
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" />
+                Grid.Column="1"/>
 
-            <Grid Grid.Column="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Style="{StaticResource RowMarginStyle}" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Style="{StaticResource RowMarginStyle}" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
 
-                <Button Grid.Row="1" Content="Instruction" />
-
-                <controls:NumberPanel
-                    x:Name="panel"
-                    Grid.Row="5"
-                    CancelClickCommand="{Binding CancelCommand}"
-                    OkClickCommand="{Binding OkCommand}"
-                    ScreenText="{Binding DisplayText, Mode=TwoWay}" />
-            </Grid>
-        </Grid>
-
-        <Grid Grid.Row="5">
+        </Grid>        
+        
+        <Grid 
+            Grid.Row="1"
+            Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock
-                Grid.Column="3"
-                Margin="8"
-                Text="{Binding DisplayText, Mode=OneWay}" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Style="{StaticResource RowMarginStyle}" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-            <Label
+            <Button 
+                Grid.Column="1" 
+                Grid.Row="1"
+                Content="Instruction" />
+
+            <controls:NumberPanel
+                x:Name="NumPanelCtlr"
+                Grid.Column="1"
+                Grid.Row="3"
+                CancelClickCommand="{Binding CancelCommand}"
+                OkClickCommand="{Binding OkCommand}"
+                ScreenText="{Binding DisplayText, Mode=TwoWay}" />
+            <Button
                 x:Name="productLbl"
                 Grid.Column="1"
-                Content="Push"
-                Style="{StaticResource ProductcaseStyle}" />
+                Grid.Row="5"
+                Content="Push" />
         </Grid>
+
     </Grid>
 </Window>

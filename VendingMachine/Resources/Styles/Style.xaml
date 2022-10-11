@@ -90,7 +90,12 @@
                             <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Border>
-                </ControlTemplate>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property = "Background" Value="#ff8ab0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>                
             </Setter.Value>            
         </Setter>
     </Style>
@@ -115,18 +120,18 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ControlPanelCancelButtonStyle" TargetType="Button">
+    <Style x:Key="ControlPanelCancelButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="#ff4b42"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Margin="2" CornerRadius="5" Background="#ff4b42"  BorderBrush="#ccc" BorderThickness="2" >
-                        <Border CornerRadius="5" Background="#ff4b42" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Margin="2" CornerRadius="5" BorderBrush="#ccc" BorderThickness="2" >                        
+                        <Border CornerRadius="5" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >                            
                             <ContentPresenter x:Name="contentPresenter" 
                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                               Content="{TemplateBinding Content}" 
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              Margin="{TemplateBinding Padding}" 
+                                              Margin="{TemplateBinding Padding}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Border>
