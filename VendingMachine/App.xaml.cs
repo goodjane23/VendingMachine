@@ -10,27 +10,25 @@ namespace VendingMachine;
 
 public partial class App : Application
 {
-  
     private readonly IHost appHost;
     
     public App()
     {
-        var services = new ServiceCollection();
-
         appHost = Host.CreateDefaultBuilder()
-            .ConfigureServices(services =>
-            {
-                // Windows
-                services.AddSingleton<MainWindow>();
-
-                //ViewModels
-                services.AddSingleton<MainWindowViewModel>();
-                services.AddDbContextFactory<VendingDbContext>(options =>
-                {
-                    options.UseSqlite("Data Source=Data\\storage.db;");
-                });
-            })
+            .ConfigureServices(ConfigureServices)
             .Build();
+    }
+
+    private void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSingleton<MainWindow>();
+        
+        services.AddSingleton<MainWindowViewModel>();
+        
+        services.AddDbContextFactory<VendingDbContext>(options =>
+        {
+            options.UseSqlite("Data Source=Data\\storage.db;");
+        });
     }
 
     protected override async void OnStartup(StartupEventArgs e)
@@ -41,5 +39,11 @@ public partial class App : Application
         window.Show();
 
         base.OnStartup(e);
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        await appHost.StopAsync();
+        base.OnExit(e);
     }
 }
