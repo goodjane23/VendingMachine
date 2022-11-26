@@ -45,7 +45,7 @@
     <Page Update="Controls\Showcase.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Resources\Styles\Style.xaml">
+    <Page Update="Resources\Styles\CommonStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

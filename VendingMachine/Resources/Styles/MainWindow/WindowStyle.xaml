@@ -34,7 +34,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NewWindowStyle" TargetType="{x:Type Window}">
+    <Style x:Key="WindowStyle" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="AllowsTransparency" Value="true" />
         <Setter Property="Background" Value="Transparent" />

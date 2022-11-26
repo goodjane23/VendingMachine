@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:VendingMachine.Views.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Style="{StaticResource NewWindowStyle}"
+    Style="{StaticResource WindowStyle}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     
