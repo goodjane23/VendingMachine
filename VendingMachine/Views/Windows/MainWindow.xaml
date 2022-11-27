@@ -34,7 +34,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:Showcase Grid.Column="1" Margin="14,28"/>
+            <controls:Showcase Grid.Column="1"
+                Margin="14,28,14,28"
+                ItemHeight="40"
+                ItemWidth="40" />
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
