@@ -28,16 +28,21 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <controls:Showcase x:Name="showcase" Grid.Column="0" Margin="8" Height="520" Width="320">
-                <controls:Showcase.ItemTemplate>
+            <ItemsControl x:Name="showcase" Grid.Column="0" Margin="8" Height="520" Width="320">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel x:Name="wrapPanel" Style="{StaticResource ShowcaseWrapPanelStyle}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>                    
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
                             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}"/>
                         </StackPanel>
                     </DataTemplate>
-                </controls:Showcase.ItemTemplate>
-            </controls:Showcase>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
             <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="8" Orientation="Vertical">
                 <controls:NumberPanel ScreenText="{Binding DisplayText, Mode=TwoWay}"

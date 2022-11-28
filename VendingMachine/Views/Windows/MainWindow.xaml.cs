@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using VendingMachine.Controls;
 using VendingMachine.Data.Entities;
 using VendingMachine.ViewModels;
 
@@ -23,9 +24,11 @@ public partial class MainWindow : Window
             new Product { Name = "234" },
             new Product { Name = "345" },
         };
-
-        showcase.Items = products;
-
+        foreach (var product in products)
+        {
+            showcase.Items.Add(product);
+        }
+       
         DataContext = viewModel;
     }
 }
