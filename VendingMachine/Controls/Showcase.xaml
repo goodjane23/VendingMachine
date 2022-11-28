@@ -6,30 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <WrapPanel x:Name="wrapPanel" Style="{StaticResource ShowcaseWrapPanelStyle}">
-        <Image Source="pack://application:,,,/Resources/Images/VioletPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/VioletPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/VioletPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/GoldPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/GoldPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/DarkBluePotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/GreenPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/GreenPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/OrangePotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/OrangePotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/RedPotion.png" />
-        <TextBlock Text="1245"/>
-        <Image Source="pack://application:,,,/Resources/Images/RedPotion.png" />
-        <TextBlock Text="1245"/>
-    </WrapPanel>
+    <ItemsControl x:Name="itemsControl">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel x:Name="wrapPanel" ItemHeight="80" ItemWidth="80" Style="{StaticResource ShowcaseWrapPanelStyle}" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
 </UserControl>

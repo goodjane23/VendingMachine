@@ -17,56 +17,35 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+        <Label Grid.Row="0"
             Style="{StaticResource MainHeaderLblStyle}"
             Content="Take 'n' Go"/>
-        
-        <Grid Grid.Column="0" Grid.Row="1">
+
+        <Grid Grid.Row="1" Margin="14">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:Showcase Grid.Column="1"
-                Margin="14,28,14,28"
-                ItemHeight="40"
-                ItemWidth="40" />
-        </Grid>
+            <controls:Showcase x:Name="showcase" Grid.Column="0" Margin="8" Height="520" Width="320">
+                <controls:Showcase.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
+                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </controls:Showcase.ItemTemplate>
+            </controls:Showcase>
 
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" Grid.Column="1" Margin="8" Orientation="Vertical">
+                <controls:NumberPanel ScreenText="{Binding DisplayText, Mode=TwoWay}"
+                    CancelClickCommand="{Binding CancelCommand}"
+                    OkClickCommand="{Binding OkCommand}"/>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Style="{StaticResource RowMarginStyle}" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Button Grid.Column="1" Grid.Row="1"
-                Content="Instruction" />
-
-            <controls:NumberPanel Grid.Column="1" Grid.Row="3"
-                CancelClickCommand="{Binding CancelCommand}"
-                OkClickCommand="{Binding OkCommand}"
-                ScreenText="{Binding DisplayText, Mode=TwoWay}" />
-
-            <Button Grid.Column="1" Grid.Row="5"
-                Content="Push" />
+                <Button Margin="0,14,0,0" Content="Push"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
