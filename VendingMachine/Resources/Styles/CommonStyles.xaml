@@ -106,8 +106,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Margin="2" CornerRadius="5" BorderBrush="#ccc" BorderThickness="2" >                        
-                        <Border CornerRadius="5" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >                            
+                    <Border Margin="2" CornerRadius="5" Background="#ff4b42"  BorderBrush="#ccc" BorderThickness="2" >
+                        <Border CornerRadius="5" Background="#ff4b42" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >                            
                             <ContentPresenter x:Name="contentPresenter" 
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}" 
