@@ -10,8 +10,8 @@
     Icon="pack://application:,,,/Resources/Images/vending-icon.png"
     Style="{StaticResource WindowStyle}"
     WindowStartupLocation="CenterScreen"
-    MinHeight="700"
-    MinWidth="650"
+    MinHeight="750"
+    MinWidth="700"
     mc:Ignorable="d">
     
     <Grid>
@@ -59,6 +59,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Margin="0,0,0,12" FontSize="16" Foreground="Gray" HorizontalAlignment="Center" Text="-= INSTRUCTION =-"/>
@@ -86,6 +87,14 @@
 
                         <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="Gray" TextWrapping="WrapWithOverflow" Text="Нажмите кнопку PUSH"/>
                     </StackPanel>
+
+                    <StackPanel Grid.Row="4" Margin="0,4,0,4" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="Gray" BorderThickness="1">
+                            <TextBlock Text="4" FontSize="16" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                        <TextBlock Margin="8,0,0,0" FontSize="13" Width="220" TextAlignment="Left" VerticalAlignment="Center" Foreground="Gray" TextWrapping="WrapWithOverflow" Text="Заберите сдачу или продолжайте покупки"/>
+                    </StackPanel>
                 </Grid>
 
                 <controls:NumberPanel Grid.Row="1" Margin="8,14,8,8"
@@ -100,10 +109,9 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Text="Баланс: 0 р." FontSize="14" Foreground="Gray"/>
-                    <!--<TextBlock Grid.Row="1" Text="Внести купюры" FontSize="14" Foreground="Gray" HorizontalAlignment="Center"/>-->
+                    <TextBlock Grid.Row="0" Text="{Binding StringFormat=Баланс: {0} р., Path=VendingBalance}" FontSize="14" Foreground="Gray"/>
 
-                    <Grid Grid.Row="2" Margin="0,8,0,0">
+                    <Grid Grid.Row="1" Margin="0,8,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -112,15 +120,15 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Column="0" Style="{StaticResource CashButtonStyle}" Margin="4" Content="5"/>
-                        <Button Grid.Column="1" Style="{StaticResource CashButtonStyle}" Margin="4" Content="10"/>
-                        <Button Grid.Column="2" Style="{StaticResource CashButtonStyle}" Margin="4" Content="50"/>
-                        <Button Grid.Column="3" Style="{StaticResource CashButtonStyle}" Margin="4" Content="100"/>
-                        <Button Grid.Column="4" Style="{StaticResource CashButtonStyle}" Margin="4" Content="500"/>
+                        <Button Grid.Column="0" Style="{StaticResource CashButtonStyle}" Margin="4" Content="5" Command="{Binding InsertMoneyCommand}" CommandParameter="5"/>
+                        <Button Grid.Column="1" Style="{StaticResource CashButtonStyle}" Margin="4" Content="10" Command="{Binding InsertMoneyCommand}" CommandParameter="10"/>
+                        <Button Grid.Column="2" Style="{StaticResource CashButtonStyle}" Margin="4" Content="50" Command="{Binding InsertMoneyCommand}" CommandParameter="50"/>
+                        <Button Grid.Column="3" Style="{StaticResource CashButtonStyle}" Margin="4" Content="100" Command="{Binding InsertMoneyCommand}" CommandParameter="100"/>
+                        <Button Grid.Column="4" Style="{StaticResource CashButtonStyle}" Margin="4" Content="500" Command="{Binding InsertMoneyCommand}" CommandParameter="500"/>
                     </Grid>
                 </Grid>
 
-                <Button Grid.Row="3" Style="{StaticResource OddMoneyButtonStyle}" Height="23" Content="Забрать сдачу" Margin="0,0,8,8"/>
+                <Button Grid.Row="3" Style="{StaticResource OddMoneyButtonStyle}" Height="23" Content="Забрать сдачу" Command="{Binding TakeOddMoneyCommand}" Margin="0,0,8,8"/>
                 <Button Grid.Row="4" Style="{StaticResource PushButtonStyle}" Height="35" Margin="0,0,8,8" Content="P U S H"/>
             </Grid>
         </Grid>
