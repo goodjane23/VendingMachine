@@ -5,12 +5,16 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VendingMachine.Data.Entities;
+using VendingMachine.Services.Vending;
 
 namespace VendingMachine.ViewModels;
 
 public class MainWindowViewModel : ObservableObject
 {
+
+    private readonly IVendingService vendingService;
     private string displayText = string.Empty;
+
     public string DisplayText
     {
         get => displayText;
@@ -22,8 +26,9 @@ public class MainWindowViewModel : ObservableObject
     public ICommand OkCommand { get; }
     public ICommand CancelCommand { get; }
     
-    public MainWindowViewModel()
+    public MainWindowViewModel(IVendingService vendingService)
     {
+        this.vendingService = vendingService;
         var products = new List<Product>()
         {
             new Product { Name = "123" },
@@ -40,6 +45,6 @@ public class MainWindowViewModel : ObservableObject
         ShowcaseItems = new ObservableCollection<Product>(products);
 
         OkCommand = new RelayCommand(() => MessageBox.Show($"Товар #{DisplayText}", "Выбран товар"));
-        CancelCommand = new RelayCommand(() => DisplayText = "");
+        CancelCommand = new RelayCommand(() => DisplayText = "");        
     }
 }
