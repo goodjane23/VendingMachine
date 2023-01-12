@@ -80,7 +80,7 @@
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Margin="2" CornerRadius="5" Background="#ff8ab0" BorderBrush="#ccc" BorderThickness="2" >
                                 <Border CornerRadius="5" Background="#ff8ab0" BorderBrush="#ff8ab0" BorderThickness="0,0,2,2" >
                                     <ContentPresenter
@@ -103,7 +103,7 @@
         <Setter Property="Background" Value="LightGreen"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
+                <ControlTemplate TargetType="{x:Type Button}">
                     <Border Margin="2" CornerRadius="5" Background="LightGreen" BorderBrush="#ccc" BorderThickness="2" >
                         <Border CornerRadius="5" Background="LightGreen" BorderBrush="#09b51a" BorderThickness="0,0,2,2" >
                             <ContentPresenter x:Name="contentPresenter" 
@@ -123,7 +123,7 @@
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Margin="2" CornerRadius="5" Background="#09b51a" BorderBrush="#ccc" BorderThickness="2" >
                                 <Border CornerRadius="5" Background="#09b51a" BorderBrush="#09b51a" BorderThickness="0,0,2,2" >
                                     <ContentPresenter
@@ -166,7 +166,7 @@
                 <Setter Property="SnapsToDevicePixels" Value="True"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Margin="2" CornerRadius="5" Background="#d93636" BorderBrush="#ccc" BorderThickness="2" >
                                 <Border CornerRadius="5" Background="#d93636" BorderBrush="#d93636" BorderThickness="0,0,2,2" >
                                     <ContentPresenter
@@ -200,7 +200,89 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <Style x:Key="CashButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="BorderBrush" Value="#c74e5c"/>
+        <Setter Property="Background" Value="#ffc7a7"/>
+        <Setter Property="Foreground" Value="#932500"/>
+        <Setter Property="Height" Value="20"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="{TemplateBinding Height}" CornerRadius="10" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" Value="#933a44"/>
+                            <Setter Property="Background" Value="#ff9e67"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PushButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#3498db"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="{TemplateBinding Height}" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                            <Setter Property="Background" Value="#3498db"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                            <Setter Property="Background" Value="#2774a7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OddMoneyButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#ff7878"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Height="{TemplateBinding Height}" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                            <Setter Property="Background" Value="#ff7878"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="AliceBlue"/>
+                            <Setter Property="Background" Value="#cc6060"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--#endregion-->
 
     <Style x:Key="RowMarginStyle" TargetType="{x:Type RowDefinition}">

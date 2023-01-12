@@ -18,7 +18,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Margin="0,12,0,12" Style="{StaticResource MainHeaderLblStyle}" Content="Take 'n' Go"/>
@@ -35,7 +34,7 @@
                         <WrapPanel Style="{StaticResource ShowcaseWrapPanelStyle}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>                    
+                <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
@@ -49,9 +48,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                
+
                 <Grid Grid.Row="0" Margin="8,0,8,8">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -60,30 +61,30 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Margin="0,0,0,12" FontSize="16" Foreground="#999999" HorizontalAlignment="Center" Text="-= INSTRUCTION =-"/>
+                    <TextBlock Grid.Row="0" Margin="0,0,0,12" FontSize="16" Foreground="Gray" HorizontalAlignment="Center" Text="-= INSTRUCTION =-"/>
 
                     <StackPanel Grid.Row="1" Margin="0,4,0,4" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="#999999" BorderThickness="1">
-                            <TextBlock Text="1" FontSize="16" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="Gray" BorderThickness="1">
+                            <TextBlock Text="1" FontSize="16" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
 
-                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="#999999" TextWrapping="WrapWithOverflow" Text="Внесите деньги"/>
+                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="Gray" TextWrapping="WrapWithOverflow" Text="Внесите деньги"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Margin="0,4,0,4" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="#999999" BorderThickness="1" VerticalAlignment="Center">
-                            <TextBlock Text="2" FontSize="16" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="Gray" BorderThickness="1" VerticalAlignment="Center">
+                            <TextBlock Text="2" FontSize="16" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
 
-                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="#999999" TextWrapping="WrapWithOverflow" Text="Введите номер товара на панели"/>
+                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="Gray" TextWrapping="WrapWithOverflow" Text="Введите номер товара на панели"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" Margin="0,4,0,4" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="#999999" BorderThickness="1">
-                            <TextBlock Text="3" FontSize="16" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border Width="30" Height="30" CornerRadius="15" BorderBrush="Gray" BorderThickness="1">
+                            <TextBlock Text="3" FontSize="16" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
 
-                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="#999999" TextWrapping="WrapWithOverflow" Text="Нажмите кнопку PUSH"/>
+                        <TextBlock Margin="8,0,0,0" FontSize="13" TextAlignment="Center" VerticalAlignment="Center" Foreground="Gray" TextWrapping="WrapWithOverflow" Text="Нажмите кнопку PUSH"/>
                     </StackPanel>
                 </Grid>
 
@@ -92,12 +93,36 @@
                     CancelClickCommand="{Binding CancelCommand}"
                     OkClickCommand="{Binding OkCommand}"/>
 
-                <Button Grid.Row="2" Height="35" Margin="8,14,8,0" Content="PUSH"/>
-            </Grid>
-        </Grid>
+                <Grid Grid.Row="2" Margin="0,8,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-        <Grid Grid.Row="2">
-            <TextBlock Margin="12" HorizontalAlignment="Center" Foreground="#999999" Text="Место под деньги"/>
+                    <TextBlock Grid.Row="0" Text="Баланс: 0 р." FontSize="14" Foreground="Gray"/>
+                    <!--<TextBlock Grid.Row="1" Text="Внести купюры" FontSize="14" Foreground="Gray" HorizontalAlignment="Center"/>-->
+
+                    <Grid Grid.Row="2" Margin="0,8,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Style="{StaticResource CashButtonStyle}" Margin="4" Content="5"/>
+                        <Button Grid.Column="1" Style="{StaticResource CashButtonStyle}" Margin="4" Content="10"/>
+                        <Button Grid.Column="2" Style="{StaticResource CashButtonStyle}" Margin="4" Content="50"/>
+                        <Button Grid.Column="3" Style="{StaticResource CashButtonStyle}" Margin="4" Content="100"/>
+                        <Button Grid.Column="4" Style="{StaticResource CashButtonStyle}" Margin="4" Content="500"/>
+                    </Grid>
+                </Grid>
+
+                <Button Grid.Row="3" Style="{StaticResource OddMoneyButtonStyle}" Height="23" Content="Забрать сдачу" Margin="0,0,8,8"/>
+                <Button Grid.Row="4" Style="{StaticResource PushButtonStyle}" Height="35" Margin="0,0,8,8" Content="P U S H"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
