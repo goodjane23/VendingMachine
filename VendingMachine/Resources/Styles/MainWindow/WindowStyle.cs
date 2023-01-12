@@ -10,32 +10,35 @@ internal static class LocalExtensions
     public static void ForWindowFromTemplate(this object templateFrameworkElement, Action<Window> action)
     {
         Window window = ((FrameworkElement)templateFrameworkElement).TemplatedParent as Window;
-        if (window != null) action(window);
+
+        if (window != null)
+            action?.Invoke(window);
     }
 
     public static IntPtr GetWindowHandle(this Window window)
     {
-        WindowInteropHelper helper = new WindowInteropHelper(window);
+        var helper = new WindowInteropHelper(window);
         return helper.Handle;
     }
 }
 
 public partial class WindowStyle
 {
-    void IconMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    private void IconMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         if (e.ClickCount > 1)
             sender.ForWindowFromTemplate(w => SystemCommands.CloseWindow(w));
     }
 
-    void IconMouseUp(object sender, MouseButtonEventArgs e)
+    private void IconMouseUp(object sender, MouseButtonEventArgs e)
     {
         var element = sender as FrameworkElement;
         var point = element.PointToScreen(new Point(element.ActualWidth / 2, element.ActualHeight));
+
         sender.ForWindowFromTemplate(w => SystemCommands.ShowSystemMenu(w, point));
     }
 
-    void WindowLoaded(object sender, RoutedEventArgs e)
+    private void WindowLoaded(object sender, RoutedEventArgs e)
     {
         //((Window)sender).StateChanged += WindowStateChanged;
     }
@@ -65,22 +68,24 @@ public partial class WindowStyle
     //    }
     //}
 
-    void CloseButtonClick(object sender, RoutedEventArgs e)
+    private void CloseButtonClick(object sender, RoutedEventArgs e)
     {
         sender.ForWindowFromTemplate(w => SystemCommands.CloseWindow(w));
     }
 
-    void MinButtonClick(object sender, RoutedEventArgs e)
+    private void MinButtonClick(object sender, RoutedEventArgs e)
     {
         sender.ForWindowFromTemplate(w => SystemCommands.MinimizeWindow(w));
     }
 
-    void MaxButtonClick(object sender, RoutedEventArgs e)
+    private void MaxButtonClick(object sender, RoutedEventArgs e)
     {
         sender.ForWindowFromTemplate(w =>
         {
-            if (w.WindowState == WindowState.Maximized) SystemCommands.RestoreWindow(w);
-            else SystemCommands.MaximizeWindow(w);
+            if (w.WindowState == WindowState.Maximized)
+                SystemCommands.RestoreWindow(w);
+            else 
+                SystemCommands.MaximizeWindow(w);
         });
     }
 }
