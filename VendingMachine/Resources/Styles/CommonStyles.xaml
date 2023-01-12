@@ -70,15 +70,33 @@
                                 Margin="{TemplateBinding Padding}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="#ff8ab0"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                    </Border>                 
                 </ControlTemplate>                
             </Setter.Value>            
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Margin="2" CornerRadius="5" Background="#ff8ab0" BorderBrush="#ccc" BorderThickness="2" >
+                                <Border CornerRadius="5" Background="#ff8ab0" BorderBrush="#ff8ab0" BorderThickness="0,0,2,2" >
+                                    <ContentPresenter
+                                        x:Name="contentPresenter" 
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        Content="{TemplateBinding Content}" 
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                        Margin="{TemplateBinding Padding}" 
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ControlPanelOkButtonStyle" TargetType="{x:Type Button}">
@@ -87,7 +105,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Margin="2" CornerRadius="5" Background="LightGreen" BorderBrush="#ccc" BorderThickness="2" >
-                        <Border CornerRadius="5" Background="LightGreen" BorderBrush="Green" BorderThickness="0,0,2,2" >
+                        <Border CornerRadius="5" Background="LightGreen" BorderBrush="#09b51a" BorderThickness="0,0,2,2" >
                             <ContentPresenter x:Name="contentPresenter" 
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}" 
@@ -99,6 +117,29 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Margin="2" CornerRadius="5" Background="#09b51a" BorderBrush="#ccc" BorderThickness="2" >
+                                <Border CornerRadius="5" Background="#09b51a" BorderBrush="#09b51a" BorderThickness="0,0,2,2" >
+                                    <ContentPresenter
+                                        x:Name="contentPresenter" 
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        Content="{TemplateBinding Content}" 
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                        Margin="{TemplateBinding Padding}" 
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ControlPanelCancelButtonStyle" TargetType="{x:Type Button}">
@@ -106,8 +147,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Margin="2" CornerRadius="5" Background="#ff4b42"  BorderBrush="#ccc" BorderThickness="2" >
-                        <Border CornerRadius="5" Background="#ff4b42" BorderBrush="DarkRed" BorderThickness="0,0,2,2" >                            
+                    <Border Margin="2" CornerRadius="5" Background="#ff7878"  BorderBrush="#ccc" BorderThickness="2" >
+                        <Border CornerRadius="5" Background="#ff7878" BorderBrush="#d93636" BorderThickness="0,0,2,2" >                            
                             <ContentPresenter x:Name="contentPresenter" 
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}" 
@@ -119,6 +160,29 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Margin="2" CornerRadius="5" Background="#d93636" BorderBrush="#ccc" BorderThickness="2" >
+                                <Border CornerRadius="5" Background="#d93636" BorderBrush="#d93636" BorderThickness="0,0,2,2" >
+                                    <ContentPresenter
+                                        x:Name="contentPresenter" 
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        Content="{TemplateBinding Content}" 
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                        Margin="{TemplateBinding Padding}" 
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ChangeBtnStyle" TargetType="{x:Type Button}">
