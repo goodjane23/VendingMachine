@@ -47,7 +47,5 @@ public class MainWindowViewModel : ObservableObject
 
         OkCommand = new RelayCommand(() => MessageBox.Show($"Товар #{DisplayText}", "Выбран товар"));
         CancelCommand = new RelayCommand(() => DisplayText = "");
-
-        vendingService.BuyProduct(15).GetAwaiter().GetResult();
     }
 }
