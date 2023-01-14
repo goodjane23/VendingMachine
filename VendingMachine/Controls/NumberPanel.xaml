@@ -56,7 +56,7 @@
                 Style="{StaticResource ControlPanelButtonStyle}" />
             <Button
                 Click="OkButton_OnClick"
-                Content="Ok"
+                Content="OK"
                 Style="{StaticResource ControlPanelOkButtonStyle}" />
             <Button
                 Click="NumberButton_OnClick"
@@ -64,7 +64,7 @@
                 Style="{StaticResource ControlPanelButtonStyle}" />
             <Button
                 Click="CancelButton_OnClick"
-                Content="Del"
+                Content="DEL"
                 Style="{StaticResource ControlPanelCancelButtonStyle}" />
         </WrapPanel>
     </StackPanel>
