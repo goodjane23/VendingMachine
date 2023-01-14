@@ -27,27 +27,35 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Border
-                Grid.Column="0"
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border
+                    Margin="12, 8"
+                Grid.Row="0"
                 CornerRadius="3"
                 BorderThickness="2"
                 BorderBrush="#56b0ff">
-                <ItemsControl ItemsSource="{Binding ShowcaseItems}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Style="{StaticResource ShowcaseWrapPanelStyle}" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
-                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </Border>
+                    <ItemsControl ItemsSource="{Binding ShowcaseItems}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Style="{StaticResource ShowcaseWrapPanelStyle}" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+                <Button Grid.Row="1" Style="{StaticResource PushButtonStyle}" Margin="12, 8" Height="30"  Content="P U S H"/>
+            </Grid>
             <Grid Grid.Column="1" Margin="8,14,8,8">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
