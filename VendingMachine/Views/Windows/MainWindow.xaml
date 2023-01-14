@@ -30,12 +30,9 @@
             </Grid.ColumnDefinitions>
             <Border
                 Grid.Column="0"
-                CornerRadius="2"
-                BorderThickness="3"
-                BorderBrush="#3498db">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="2" ShadowDepth="2" Opacity="0.5"/>
-                </Border.Effect>
+                CornerRadius="3"
+                BorderThickness="2"
+                BorderBrush="#56b0ff">
                 <ItemsControl ItemsSource="{Binding ShowcaseItems}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
