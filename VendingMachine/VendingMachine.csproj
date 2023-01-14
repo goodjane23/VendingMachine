@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\Lipops.otf" />
+    <None Remove="Resources\Fonts\Iceland.ttf" />
     <None Remove="Resources\Fonts\Lipops.ttf" />
     <None Remove="Resources\Images\DarkBluePotion.png" />
     <None Remove="Resources\Images\GoldPotion.png" />
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\Lipops.otf" />
+    <Resource Include="Resources\Fonts\Iceland.ttf" />
   </ItemGroup>
 
   <ItemGroup>
