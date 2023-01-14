@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,6 +31,7 @@ public partial class App : Application
         
         services.AddDbContextFactory<VendingDbContext>(options =>
         {
+            Directory.CreateDirectory("Data");
             options.UseSqlite("Data Source=Data\\storage.db;");
         });
     }

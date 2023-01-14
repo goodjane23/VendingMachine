@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using VendingMachine.Data;
 using VendingMachine.Data.Entities;
@@ -33,4 +35,21 @@ public class VendingService : IVendingService
         return product;
 	}
 
+    public async Task BuyProduct(int productId)
+    {
+        await using var dbContext = await contextFactory.CreateDbContextAsync();
+
+        var boughtProduct = await dbContext.Products.FirstOrDefaultAsync((x) => x.Id == productId);
+      
+        if (boughtProduct == null)
+        {
+            throw new Exception($"Product with id {productId} not found!");
+        }
+        if (boughtProduct.Amount == 0)
+        {
+            throw new Exception($"Product with id {productId} is out of stock");
+        }
+        boughtProduct.Amount--;
+        await dbContext.SaveChangesAsync();
+    }
 }

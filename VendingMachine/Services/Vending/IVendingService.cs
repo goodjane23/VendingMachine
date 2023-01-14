@@ -7,4 +7,6 @@ namespace VendingMachine.Services.Vending;
 public interface IVendingService
 {
     public Task<Product> CreateProduct(CreateProductModel model);
+
+    public Task BuyProduct(int productId);
 }
