@@ -5,12 +5,17 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VendingMachine.Data.Entities;
+using VendingMachine.Services.Vending;
+using VendingMachine.Services.Vending.Models;
 
 namespace VendingMachine.ViewModels;
 
 public class MainWindowViewModel : ObservableObject
 {
+
+    private readonly IVendingService vendingService;
     private string displayText = string.Empty;
+
     public string DisplayText
     {
         get => displayText;
@@ -31,8 +36,9 @@ public class MainWindowViewModel : ObservableObject
     public ICommand TakeOddMoneyCommand { get; }
     public IRelayCommand<string> InsertMoneyCommand { get; }
     
-    public MainWindowViewModel()
+    public MainWindowViewModel(IVendingService vendingService)
     {
+        this.vendingService = vendingService;
         var products = new List<Product>()
         {
             new Product { Name = "123" },
