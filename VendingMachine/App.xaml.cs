@@ -1,8 +1,10 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VendingMachine.Data;
+using VendingMachine.Services.Vending;
 using VendingMachine.ViewModels;
 using VendingMachine.Views.Windows;
 
@@ -24,9 +26,12 @@ public partial class App : Application
         services.AddSingleton<MainWindow>();
         
         services.AddSingleton<MainWindowViewModel>();
+
+        services.AddSingleton<IVendingService, VendingService>();
         
         services.AddDbContextFactory<VendingDbContext>(options =>
         {
+            Directory.CreateDirectory("Data");
             options.UseSqlite("Data Source=Data\\storage.db;");
         });
     }

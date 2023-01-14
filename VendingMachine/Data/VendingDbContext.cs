@@ -10,6 +10,6 @@ public class VendingDbContext : DbContext
 	public VendingDbContext(DbContextOptions<VendingDbContext> options) 
 		: base(options)
 	{
-		
+		Database.EnsureCreated();	
 	}
 }
