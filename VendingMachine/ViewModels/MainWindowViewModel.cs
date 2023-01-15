@@ -39,14 +39,8 @@ public class MainWindowViewModel : ObservableObject
     public MainWindowViewModel(IVendingService vendingService)
     {
         this.vendingService = vendingService;
-        var products = new List<Product>()
-        {
-            new Product { Name = "123" },
-            new Product { Name = "234" },
-            new Product { Name = "345" }
-        };
-
-        ShowcaseItems = new ObservableCollection<Product>(products);
+        
+        ShowcaseItems = new ObservableCollection<Product>();
 
         OkCommand = new RelayCommand(DisplaySelectedProduct);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
@@ -54,6 +48,7 @@ public class MainWindowViewModel : ObservableObject
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
 
         CancelCommand = new RelayCommand(() => DisplayText = "");
+       
     }
 
     private void DisplaySelectedProduct()
