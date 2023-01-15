@@ -72,6 +72,39 @@ public class VendingDbContext : DbContext
                 Price = 200,
                 Amount = 10,
             },
+            new Product()
+            {
+                Id = 10,
+                Name = "Potion Random",
+                ProductType = ProductType.Random,
+                Price = 500,
+                Amount = 10,
+            },
+            new Product()
+            {
+                Id = 7,
+                Name = "Potion PotionType1",
+                ProductType = ProductType.PotionType1,
+                Price = 150,
+                Amount = 10,
+            },
+            new Product()
+            {
+                Id = 8,
+                Name = "Potion PotionType2",
+                ProductType = ProductType.PotionType2,
+                Price = 200,
+                Amount = 10,
+            },
+            new Product()
+            {
+                Id = 9,
+                Name = "Potion PotionType3",
+                ProductType = ProductType.PotionType3,
+                Price = 300,
+                Amount = 10,
+            },
+
         };
         return products;
     }

@@ -8,6 +8,10 @@ public enum ProductType
     Intelligence,
     Invisibility,
     Invulnerability,
+    Random,
+    PotionType1,
+    PotionType2,
+    PotionType3,
 }
 
 public class Product
