@@ -12,21 +12,20 @@
     <None Remove="Resources\Fonts\Iceland.ttf" />
     <None Remove="Resources\Fonts\Lipops.ttf" />
     <None Remove="Resources\Images\DarkBluePotion.png" />
-    <None Remove="Resources\Images\Fiol.jpg" />
-    <None Remove="Resources\Images\Fiol2.jpg" />
-    <None Remove="Resources\Images\Fiol3.jpg" />
-    <None Remove="Resources\Images\Fiol4.jpg" />
-    <None Remove="Resources\Images\Fiol5.jpg" />
+    <None Remove="Resources\Images\Fiol.png" />
+    <None Remove="Resources\Images\Fiol2.png" />
+    <None Remove="Resources\Images\Fiol3.png" />
+    <None Remove="Resources\Images\Fiol4.png" />
+    <None Remove="Resources\Images\Fiol5.png" />
     <None Remove="Resources\Images\GoldPotion.png" />
-    <None Remove="Resources\Images\Green.JPG" />
-    <None Remove="Resources\Images\Green1.JPG" />
-    <None Remove="Resources\Images\Green2.JPG" />
-    <None Remove="Resources\Images\Green3.JPG" />
-    <None Remove="Resources\Images\Green4.JPG" />
+    <None Remove="Resources\Images\Green.png" />
+    <None Remove="Resources\Images\Green1.png" />
+    <None Remove="Resources\Images\Green2.png" />
+    <None Remove="Resources\Images\Green3.png" />
+    <None Remove="Resources\Images\Green4.png" />
     <None Remove="Resources\Images\GreenPotion.png" />
     <None Remove="Resources\Images\OrangePotion.png" />
     <None Remove="Resources\Images\RedPotion.png" />
-    <None Remove="Resources\Images\vending-icon.png" />
     <None Remove="Resources\Images\VioletPotion.png" />
   </ItemGroup>
 
@@ -48,17 +47,16 @@
 
   <ItemGroup>
     <Resource Include="Resources\Fonts\Lipops.ttf" />
-    <Resource Include="Resources\Images\Fiol.jpg" />
-    <Resource Include="Resources\Images\Fiol2.jpg" />
-    <Resource Include="Resources\Images\Fiol3.jpg" />
-    <Resource Include="Resources\Images\Fiol4.jpg" />
-    <Resource Include="Resources\Images\Fiol5.jpg" />
-    <Resource Include="Resources\Images\Green.JPG" />
-    <Resource Include="Resources\Images\Green1.JPG" />
-    <Resource Include="Resources\Images\Green2.JPG" />
-    <Resource Include="Resources\Images\Green3.JPG" />
-    <Resource Include="Resources\Images\Green4.JPG" />
-    <Resource Include="Resources\Images\vending-icon.png" />
+    <Resource Include="Resources\Images\Fiol.png" />
+    <Resource Include="Resources\Images\Fiol2.png" />
+    <Resource Include="Resources\Images\Fiol3.png" />
+    <Resource Include="Resources\Images\Fiol4.png" />
+    <Resource Include="Resources\Images\Fiol5.png" />
+    <Resource Include="Resources\Images\Green.png" />
+    <Resource Include="Resources\Images\Green1.png" />
+    <Resource Include="Resources\Images\Green2.png" />
+    <Resource Include="Resources\Images\Green3.png" />
+    <Resource Include="Resources\Images\Green4.png" />
   </ItemGroup>
 
   <ItemGroup>
