@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using VendingMachine.Data;
 using VendingMachine.Data.Entities;
@@ -50,5 +51,14 @@ public class VendingService : IVendingService
         }
         boughtProduct.Amount--;
         await dbContext.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Product>> GetAllProducts()
+    {
+        await using var dbContext = await contextFactory.CreateDbContextAsync();
+
+        return await dbContext.Products
+            .AsNoTracking()
+            .ToListAsync();
     }
 }

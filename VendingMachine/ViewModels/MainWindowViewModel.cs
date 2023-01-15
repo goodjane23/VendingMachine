@@ -38,17 +38,20 @@ public class MainWindowViewModel : ObservableObject
     
     public MainWindowViewModel(IVendingService vendingService)
     {
-        this.vendingService = vendingService;
+        this.vendingService = vendingService;      
         
-        ShowcaseItems = new ObservableCollection<Product>();
+        ShowcaseItems = new ObservableCollection<Product>(vendingService
+            .GetAllProducts()
+            .GetAwaiter()
+            .GetResult());
 
         OkCommand = new RelayCommand(DisplaySelectedProduct);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
-
+        CancelCommand = new RelayCommand(() => DisplayText = "");
+       
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
 
         CancelCommand = new RelayCommand(() => DisplayText = "");
-       
     }
 
     private void DisplaySelectedProduct()
