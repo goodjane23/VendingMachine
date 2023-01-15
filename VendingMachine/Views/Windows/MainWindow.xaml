@@ -34,10 +34,10 @@
                 </Grid.RowDefinitions>
                 <Border
                     Margin="12, 8"
-                Grid.Row="0"
-                CornerRadius="3"
-                BorderThickness="2"
-                BorderBrush="#56b0ff">
+                    Grid.Row="0"
+                    CornerRadius="3"
+                    BorderThickness="2"
+                    BorderBrush="#56b0ff">
                     <ItemsControl ItemsSource="{Binding ShowcaseItems}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -56,6 +56,7 @@
                 </Border>
                 <Button Grid.Row="1" Style="{StaticResource PushButtonStyle}" Margin="12, 8" Height="30"  Content="P U S H"/>
             </Grid>
+            
             <Grid Grid.Column="1" Margin="8,14,8,8">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
