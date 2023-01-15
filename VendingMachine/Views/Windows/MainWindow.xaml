@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:VendingMachine.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:VendingMachine.Views.Windows"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cnv="clr-namespace:VendingMachine.Converters"
     Title="Vending Machine"
     Icon="pack://application:,,,/Resources/Images/vending-icon.png"
     Style="{StaticResource WindowStyle}"
@@ -13,6 +13,10 @@
     MinHeight="750"
     MinWidth="700"
     mc:Ignorable="d">
+
+    <Window.Resources>
+        <cnv:TypeToIconConverter x:Key="TypeToIconConverter" />
+    </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -32,9 +36,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Border
-                    Margin="12, 8"
-                    Grid.Row="0"
+                <Border Grid.Row="0" Margin="12, 8"
                     CornerRadius="3"
                     BorderThickness="2"
                     BorderBrush="#56b0ff">
@@ -46,9 +48,16 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Vertical">
-                                    <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Source="pack://application:,,,/Resources/Images/VioletPotion.png"/>
-                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}"/>
+                                <StackPanel Margin="4" Orientation="Vertical">
+                                    <Image Width="45" Height="45"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Source="{Binding ProductType, Converter={StaticResource TypeToIconConverter}}" />
+                                    <TextBlock Text="{Binding Name}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        TextAlignment="Center"
+                                        TextWrapping="WrapWithOverflow" />
                                 </StackPanel>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -56,7 +65,7 @@
                 </Border>
                 <Button Grid.Row="1" Style="{StaticResource PushButtonStyle}" Margin="12, 8" Height="30"  Content="P U S H"/>
             </Grid>
-            
+
             <Grid Grid.Column="1" Margin="8,14,8,8">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
