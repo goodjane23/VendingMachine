@@ -51,7 +51,7 @@ public class MainWindowViewModel : ObservableObject
        
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
 
-        CancelCommand = new RelayCommand(() => DisplayText = "");
+        CancelCommand = new RelayCommand(() => DisplayText = "");       
     }
 
     private void DisplaySelectedProduct()
