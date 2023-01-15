@@ -18,9 +18,13 @@ public class TypeToIconConverter : IValueConverter
             ProductType.Health => $"{BASE_ICON_PATH}/Fiol2.png",
             ProductType.Intelligence => $"{BASE_ICON_PATH}/Fiol3.png",
             ProductType.Invisibility => $"{BASE_ICON_PATH}/Fiol4.png",
-            ProductType.Strength => $"{BASE_ICON_PATH}/Green2.png",
-            ProductType.Invulnerability => $"{BASE_ICON_PATH}/Green4.png",
-            
+            ProductType.Random => $"{BASE_ICON_PATH}/Fiol5.png",
+            ProductType.Strength => $"{BASE_ICON_PATH}/Green.png",
+            ProductType.PotionType1 => $"{BASE_ICON_PATH}/Green2.png",
+            ProductType.PotionType2 => $"{BASE_ICON_PATH}/Green3.png",
+            ProductType.PotionType3 => $"{BASE_ICON_PATH}/Green4.png",
+            ProductType.Invulnerability => $"{BASE_ICON_PATH}/Green1.png",
+
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };
     }
