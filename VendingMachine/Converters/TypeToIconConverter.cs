@@ -14,12 +14,12 @@ public class TypeToIconConverter : IValueConverter
     {
         return value switch
         {
-            ProductType.Agility => $"{BASE_ICON_PATH}/Fiol.jpg",
-            ProductType.Health => $"{BASE_ICON_PATH}/Fiol2.jpg",
-            ProductType.Intelligence => $"{BASE_ICON_PATH}/Fiol3.jpg",
-            ProductType.Invisibility => $"{BASE_ICON_PATH}/Fiol4.jpg",
-            ProductType.Strength => $"{BASE_ICON_PATH}/Green2.jpg",
-            ProductType.Invulnerability => $"{BASE_ICON_PATH}/Green4.jpg",
+            ProductType.Agility => $"{BASE_ICON_PATH}/Fiol.png",
+            ProductType.Health => $"{BASE_ICON_PATH}/Fiol2.png",
+            ProductType.Intelligence => $"{BASE_ICON_PATH}/Fiol3.png",
+            ProductType.Invisibility => $"{BASE_ICON_PATH}/Fiol4.png",
+            ProductType.Strength => $"{BASE_ICON_PATH}/Green2.png",
+            ProductType.Invulnerability => $"{BASE_ICON_PATH}/Green4.png",
             
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };

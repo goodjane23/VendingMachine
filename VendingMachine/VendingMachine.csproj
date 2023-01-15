@@ -26,6 +26,7 @@
     <None Remove="Resources\Images\GreenPotion.png" />
     <None Remove="Resources\Images\OrangePotion.png" />
     <None Remove="Resources\Images\RedPotion.png" />
+    <None Remove="Resources\Images\vending-icon.png" />
     <None Remove="Resources\Images\VioletPotion.png" />
   </ItemGroup>
 
@@ -57,6 +58,7 @@
     <Resource Include="Resources\Images\Green2.png" />
     <Resource Include="Resources\Images\Green3.png" />
     <Resource Include="Resources\Images\Green4.png" />
+    <Resource Include="Resources\Images\vending-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
