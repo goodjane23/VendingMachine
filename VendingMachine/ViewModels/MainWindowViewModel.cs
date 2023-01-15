@@ -44,9 +44,6 @@ public class MainWindowViewModel : ObservableObject
             .GetAllProducts()
             .GetAwaiter()
             .GetResult());
-        };
-
-        ShowcaseItems = new ObservableCollection<Product>(products);
 
         OkCommand = new RelayCommand(DisplaySelectedProduct);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
