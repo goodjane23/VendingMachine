@@ -79,7 +79,6 @@
                                             Style="{StaticResource ShowcaseTextBlockStyle}"/>                                        
                                     </Grid>
                                     <Separator
-                                        Foreground="Brown"
                                         Background="Brown"
                                         Grid.Row="2"
                                         Height="5"
