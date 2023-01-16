@@ -15,7 +15,7 @@
         <Setter Property="Foreground" Value="#999999"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Lipops"/>
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
     </Style>
 
     <Style x:Key="ScreenLblStyle" TargetType="{x:Type Label}">
@@ -61,6 +61,7 @@
 
     <Style x:Key="ControlPanelButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Pink"/>
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -85,6 +86,7 @@
     </Style>
 
     <Style x:Key="ControlPanelOkButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="Background" Value="LightGreen"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -110,6 +112,7 @@
     </Style>
 
     <Style x:Key="ControlPanelCancelButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="Background" Value="#ff4b42"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -135,6 +138,7 @@
     </Style>
 
     <Style x:Key="ChangeBtnStyle" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="Background" Value="#c3c3c3"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Template">
@@ -151,6 +155,7 @@
     </Style>
 
     <Style x:Key="CashButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="BorderBrush" Value="#c74e5c"/>
         <Setter Property="Background" Value="#ffc7a7"/>
         <Setter Property="Foreground" Value="#932500"/>
@@ -175,6 +180,7 @@
     </Style>
 
     <Style x:Key="PushButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="AliceBlue"/>
         <Setter Property="Background" Value="#56b0ff"/>
@@ -230,9 +236,25 @@
 
     <Style x:Key="ShowcaseWrapPanelStyle" TargetType="{x:Type WrapPanel}">
         <Setter Property="Background" Value="LightGray"/>
-        <Setter Property="ItemHeight" Value="90"/>
-        <Setter Property="ItemWidth" Value="90"/>
-        <Setter Property="Orientation" Value="Horizontal"/>       
+        <Setter Property="ItemHeight" Value="120"/>
+        <Setter Property="ItemWidth" Value="120"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
     </Style>
-    
+
+    <Style x:Key="ShowcaseBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="Margin" Value="12, 8"/>
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="#56b0ff"/>      
+    </Style>
+
+    <Style x:Key="ShowcaseTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
 </ResourceDictionary>
