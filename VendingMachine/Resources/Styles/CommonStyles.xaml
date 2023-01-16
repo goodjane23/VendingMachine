@@ -61,6 +61,7 @@
 
     <Style x:Key="ControlPanelButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="Pink"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -255,6 +256,6 @@
         <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
         <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/Resources/Fonts/#Iceland"/>
-        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontSize" Value="18"/>
     </Style>
 </ResourceDictionary>
