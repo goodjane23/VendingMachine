@@ -1,33 +1,21 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VendingMachine.Data.Entities;
 using VendingMachine.Services.Vending;
-using VendingMachine.Services.Vending.Models;
 
 namespace VendingMachine.ViewModels;
 
-public class MainWindowViewModel : ObservableObject
+public partial class MainWindowViewModel : ObservableObject
 {
-
-    private readonly IVendingService vendingService;
+    [ObservableProperty]
     private string displayText = string.Empty;
-
-    public string DisplayText
-    {
-        get => displayText;
-        set => SetProperty(ref displayText, value);
-    }
-
-    private int vendingBalance = 0;
-    public int VendingBalance
-    {
-        get => vendingBalance;
-        set => SetProperty(ref vendingBalance, value);
-    }
+    
+    [ObservableProperty]
+    private int vendingBalance;
 
     public ObservableCollection<Product> ShowcaseItems { get; }
 
@@ -36,41 +24,40 @@ public class MainWindowViewModel : ObservableObject
     public ICommand TakeOddMoneyCommand { get; }
     public IRelayCommand<string> InsertMoneyCommand { get; }
     
+    private readonly IVendingService vendingService;
+    
     public MainWindowViewModel(IVendingService vendingService)
     {
         this.vendingService = vendingService;      
         
-        ShowcaseItems = new ObservableCollection<Product>(vendingService
-            .GetAllProducts()
-            .GetAwaiter()
-            .GetResult());
+        ShowcaseItems = new ObservableCollection<Product>(vendingService.GetAllProducts().Result);
 
-        OkCommand = new RelayCommand(DisplaySelectedProduct);
+        OkCommand = new AsyncRelayCommand(BuySelectedProduct);
+        
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
         CancelCommand = new RelayCommand(() => DisplayText = "");
-       
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
-
-        CancelCommand = new RelayCommand(() => DisplayText = "");       
     }
 
-    private void DisplaySelectedProduct()
+    private async Task BuySelectedProduct()
     {
-        MessageBox.Show($"Товар #{DisplayText}", "Выбран товар");
+        var productId = int.Parse(DisplayText);
+        var productResponse = await vendingService.BuyProduct(productId);
+
+        VendingBalance = productResponse.LeftVendingBalance;
     }
 
     private void InsertMoney(string? value)
     {
         var moneyValue = int.Parse(value ?? "0");
-        VendingBalance += moneyValue;
+        VendingBalance = vendingService.InsertMoney(moneyValue);
     }
 
     private void TakeOddMoney()
     {
-        if (VendingBalance > 0)
-        {
-            MessageBox.Show($"Ваша сдача {VendingBalance} р. Спасибо за покупку!", "Ваша сдача");
-            VendingBalance = 0;
-        }
+        var oddMoney = vendingService.TakeOddMoney();
+            
+        MessageBox.Show($"Ваша сдача {oddMoney} р. Спасибо за покупку!", "Ваша сдача");
+        VendingBalance = 0;
     }
 }

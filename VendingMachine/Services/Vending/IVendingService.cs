@@ -8,8 +8,8 @@ namespace VendingMachine.Services.Vending;
 public interface IVendingService
 {
     public Task<Product> CreateProduct(CreateProductModel model);
-
-    public Task BuyProduct(int productId);
-
+    public Task<BuyProductResponse> BuyProduct(int productId);
     public Task<IEnumerable<Product>> GetAllProducts();
+    public int InsertMoney(int value);
+    public int TakeOddMoney();
 }

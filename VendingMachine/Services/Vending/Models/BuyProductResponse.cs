@@ -2,10 +2,9 @@
 
 namespace VendingMachine.Services.Vending.Models;
 
-public class CreateProductModel
+public class BuyProductResponse
 {
-    public string Name { get; set; }
+    public int LeftVendingBalance { get; set; }
+    public string ProductName { get; set; }
     public ProductType ProductType { get; set; }
-    public int Price { get; set; }
-    public byte Amount { get; set; }
 }

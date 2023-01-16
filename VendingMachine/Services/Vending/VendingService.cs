@@ -10,6 +10,8 @@ namespace VendingMachine.Services.Vending;
 
 public class VendingService : IVendingService
 {
+    private int vendingBalance;
+    
     private readonly IDbContextFactory<VendingDbContext> contextFactory;
 
     public VendingService(IDbContextFactory<VendingDbContext> contextFactory)
@@ -21,7 +23,7 @@ public class VendingService : IVendingService
 	{        
         await using var dbContext = await contextFactory.CreateDbContextAsync();
 
-        var product = new Product()
+        var product = new Product
         {            
             Name = model.Name,
             ProductType = model.ProductType,
@@ -35,30 +37,56 @@ public class VendingService : IVendingService
         return product;
 	}
 
-    public async Task BuyProduct(int productId)
+    public async Task<BuyProductResponse> BuyProduct(int productId)
     {
         await using var dbContext = await contextFactory.CreateDbContextAsync();
 
-        var boughtProduct = await dbContext.Products.FirstOrDefaultAsync((x) => x.Id == productId);
+        var boughtProduct = await dbContext.Products
+            .FirstOrDefaultAsync(x => x.Id == productId);
       
         if (boughtProduct == null)
-        {
             throw new Exception($"Product with id {productId} not found!");
-        }
+        
         if (boughtProduct.Amount == 0)
-        {
             throw new Exception($"Product with id {productId} is out of stock");
-        }
+        
+        if (vendingBalance < boughtProduct.Price)
+            throw new Exception($"Not enough money to buy {boughtProduct.Name}!");
+            
         boughtProduct.Amount--;
+        vendingBalance -= boughtProduct.Price;
+        
         await dbContext.SaveChangesAsync();
+
+        var response = new BuyProductResponse
+        {
+            LeftVendingBalance = vendingBalance,
+            ProductName = boughtProduct.Name,
+            ProductType = boughtProduct.ProductType
+        };
+
+        return response;
     }
 
     public async Task<IEnumerable<Product>> GetAllProducts()
     {
         await using var dbContext = await contextFactory.CreateDbContextAsync();
 
-        return await dbContext.Products
-            .AsNoTracking()
+        return await dbContext.Products.AsNoTracking()
             .ToListAsync();
+    }
+
+    public int InsertMoney(int value)
+    {
+        vendingBalance += value;
+        return vendingBalance;
+    }
+    
+    public int TakeOddMoney()
+    {
+        var oddMoney = vendingBalance;
+        vendingBalance = 0;
+        
+        return oddMoney;
     }
 }
