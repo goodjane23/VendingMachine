@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -6,6 +7,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VendingMachine.Data.Entities;
 using VendingMachine.Services.Vending;
+using VendingMachine.Services.Vending.Models;
 
 namespace VendingMachine.ViewModels;
 
@@ -41,10 +43,19 @@ public partial class MainWindowViewModel : ObservableObject
 
     private async Task BuySelectedProduct()
     {
-        var productId = int.Parse(DisplayText);
-        var productResponse = await vendingService.BuyProduct(productId);
+        BuyProductResponse? productResponse = null;
+        
+        try
+        {
+            var productId = int.Parse(DisplayText);
+            productResponse = await vendingService.BuyProduct(productId);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Ошибка!");
+        }
 
-        VendingBalance = productResponse.LeftVendingBalance;
+        VendingBalance = productResponse?.LeftVendingBalance ?? 0;
     }
 
     private void InsertMoney(string? value)
