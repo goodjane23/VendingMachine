@@ -6,8 +6,10 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using VendingMachine.Data.Entities;
+using VendingMachine.Factories;
 using VendingMachine.Services.Vending;
 using VendingMachine.Services.Vending.Models;
+using VendingMachine.Views.Windows;
 
 namespace VendingMachine.ViewModels;
 
@@ -24,18 +26,26 @@ public partial class MainWindowViewModel : ObservableObject
     public ICommand OkCommand { get; }
     public ICommand CancelCommand { get; }
     public ICommand TakeOddMoneyCommand { get; }
+    public ICommand PushCommand { get; }
     public IRelayCommand<string> InsertMoneyCommand { get; }
+
+    private int boughtProductId;
     
     private readonly IVendingService vendingService;
-    
-    public MainWindowViewModel(IVendingService vendingService)
+    private readonly WindowFactory<ProductPreviewWindow> previewWindowFactory;
+
+    public MainWindowViewModel(
+        IVendingService vendingService,
+        WindowFactory<ProductPreviewWindow> previewWindowFactory)
     {
-        this.vendingService = vendingService;      
-        
+        this.vendingService = vendingService;
+        this.previewWindowFactory = previewWindowFactory;
+
         ShowcaseItems = new ObservableCollection<Product>(vendingService.GetAllProducts().Result);
 
         OkCommand = new AsyncRelayCommand(BuySelectedProduct);
-        
+
+        PushCommand = new RelayCommand(TakeBoughtProduct);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
         CancelCommand = new RelayCommand(() => DisplayText = "");
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
@@ -56,6 +66,13 @@ public partial class MainWindowViewModel : ObservableObject
         }
 
         VendingBalance = productResponse?.LeftVendingBalance ?? 0;
+        boughtProductId = productResponse?.ProductId ?? 0;
+    }
+
+    private void TakeBoughtProduct()
+    {
+        var window = previewWindowFactory.Create();
+        window.ShowProduct(boughtProductId);
     }
 
     private void InsertMoney(string? value)

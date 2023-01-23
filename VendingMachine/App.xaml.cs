@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VendingMachine.Data;
+using VendingMachine.Extensions;
 using VendingMachine.Services.Vending;
 using VendingMachine.ViewModels;
 using VendingMachine.Views.Windows;
@@ -24,6 +25,8 @@ public partial class App : Application
     private void ConfigureServices(IServiceCollection services)
     {
         services.AddSingleton<MainWindow>();
+        
+        services.AddWindowFactory<ProductPreviewWindow>();
         
         services.AddSingleton<MainWindowViewModel>();
 
