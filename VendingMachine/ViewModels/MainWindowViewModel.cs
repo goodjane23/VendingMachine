@@ -23,10 +23,10 @@ public partial class MainWindowViewModel : ObservableObject
 
     public ObservableCollection<Product> ShowcaseItems { get; }
 
-    public ICommand OkCommand { get; }
-    public ICommand CancelCommand { get; }
-    public ICommand TakeOddMoneyCommand { get; }
-    public ICommand PushCommand { get; }
+    public IRelayCommand OkCommand { get; }
+    public IRelayCommand CancelCommand { get; }
+    public IRelayCommand TakeOddMoneyCommand { get; }
+    public IRelayCommand PushCommand { get; }
     public IRelayCommand<string> InsertMoneyCommand { get; }
 
     private int boughtProductId;
@@ -45,7 +45,7 @@ public partial class MainWindowViewModel : ObservableObject
 
         OkCommand = new AsyncRelayCommand(BuySelectedProduct);
 
-        PushCommand = new RelayCommand(TakeBoughtProduct);
+        PushCommand = new RelayCommand(TakeBoughtProduct, () => boughtProductId != 0);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
         CancelCommand = new RelayCommand(() => DisplayText = "");
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
@@ -63,10 +63,13 @@ public partial class MainWindowViewModel : ObservableObject
         catch (Exception ex)
         {
             MessageBox.Show(ex.Message, "Ошибка!");
+            return;
         }
 
         VendingBalance = productResponse?.LeftVendingBalance ?? 0;
         boughtProductId = productResponse?.ProductId ?? 0;
+        
+        PushCommand.NotifyCanExecuteChanged();
     }
 
     private void TakeBoughtProduct()
