@@ -29,7 +29,7 @@ public partial class MainWindowViewModel : ObservableObject
     public IRelayCommand PushCommand { get; }
     public IRelayCommand<string> InsertMoneyCommand { get; }
 
-    private int boughtProductId;
+    private int boughtProductId = -1;
     
     private readonly IVendingService vendingService;
     private readonly WindowFactory<ProductPreviewWindow> previewWindowFactory;
@@ -45,7 +45,7 @@ public partial class MainWindowViewModel : ObservableObject
 
         OkCommand = new AsyncRelayCommand(BuySelectedProduct);
 
-        PushCommand = new RelayCommand(TakeBoughtProduct, () => boughtProductId != 0);
+        PushCommand = new RelayCommand(TakeBoughtProduct, () => boughtProductId != -1);
         TakeOddMoneyCommand = new RelayCommand(TakeOddMoney);
         CancelCommand = new RelayCommand(() => DisplayText = "");
         InsertMoneyCommand = new RelayCommand<string>(InsertMoney);
@@ -76,6 +76,9 @@ public partial class MainWindowViewModel : ObservableObject
     {
         var window = previewWindowFactory.Create();
         window.ShowProduct(boughtProductId);
+
+        boughtProductId = -1;
+        PushCommand.NotifyCanExecuteChanged();
     }
 
     private void InsertMoney(string? value)
