@@ -11,7 +11,7 @@ public class VendingDbContext : DbContext
 	public VendingDbContext(DbContextOptions<VendingDbContext> options) 
 		: base(options)
 	{
-		Database.EnsureCreated();	
+		
 	}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -106,7 +106,7 @@ public class VendingDbContext : DbContext
             },
 
         };
+        
         return products;
     }
-
 }
