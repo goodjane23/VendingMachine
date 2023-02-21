@@ -61,6 +61,7 @@ public class VendingService : IVendingService
         var response = new BuyProductResponse
         {
             LeftVendingBalance = vendingBalance,
+            ProductId = boughtProduct.Id,
             ProductName = boughtProduct.Name,
             ProductType = boughtProduct.ProductType
         };
@@ -74,6 +75,19 @@ public class VendingService : IVendingService
 
         return await dbContext.Products.AsNoTracking()
             .ToListAsync();
+    }
+
+    public async Task<Product> GetProductById(int productId)
+    {
+        await using var dbContext = await contextFactory.CreateDbContextAsync();
+
+        var product = await dbContext.Products.AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == productId);
+
+        if (product is null)
+            throw new Exception("Product with id {productId} not found!");
+
+        return product;
     }
 
     public int InsertMoney(int value)
