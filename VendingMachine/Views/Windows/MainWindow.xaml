@@ -88,11 +88,10 @@
                                             Text="{Binding Price, StringFormat={}{0}$}" />
                                     </Grid>
 
-                                    <Separator
-                                        Grid.Row="2"
-                                        Width="100"
-                                        Height="5"
-                                        Background="Brown" />
+                                    <Separator Grid.Row="2"
+                                               Width="100"
+                                               Height="5"
+                                               Background="Brown" />
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -125,40 +124,26 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock
-                        Grid.Row="0"
-                        Margin="0,0,0,12"
-                        Style="{StaticResource ShowcaseTextBlockStyle}"
-                        Text="-= INSTRUCTION =-" />
+                    <TextBlock Grid.Row="0"
+                               Margin="0,0,0,12"
+                               Style="{StaticResource ShowcaseTextBlockStyle}"
+                               Text="-= INSTRUCTION =-" />
 
-                    <StackPanel
-                        Grid.Row="1"
-                        Style="{StaticResource InstructionStackPanelStyle}">
-                        <Border
-                            Style="{StaticResource InstructionBorderStyle}">
-                            <TextBlock
-                                Style="{StaticResource ShowcaseTextBlockStyle}"
-                                Text="1" />
+                    <StackPanel Grid.Row="1" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="1"/>
                         </Border>
 
-                        <TextBlock
-                            Text="Внесите деньги"
-                            Style="{StaticResource InstructionTextBlockStyle}"/>
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}" Text="Внесите деньги"/>
                     </StackPanel>
 
-                    <StackPanel
-                        Grid.Row="2"
-                        Style="{StaticResource InstructionStackPanelStyle}">
-                        <Border
-                            Style="{StaticResource InstructionBorderStyle}">
-                            <TextBlock
-                                Style="{StaticResource ShowcaseTextBlockStyle}"
-                                Text="2" />
+                    <StackPanel Grid.Row="2" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="2" />
                         </Border>
 
-                        <TextBlock
-                            Text="Введите номер товара на панели"
-                            Style="{StaticResource InstructionTextBlockStyle}"/>
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}"
+                                   Text="Введите номер товара на панели"/>
                     </StackPanel>
                     
                     <StackPanel
@@ -191,19 +176,16 @@
                             Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
 
-                    <StackPanel
-                        Grid.Row="5"
-                        Style="{StaticResource InstructionStackPanelStyle}">
-                        <Border
-                            Style="{StaticResource InstructionBorderStyle}">
-                            <TextBlock
-                                Style="{StaticResource ShowcaseTextBlockStyle}"
-                                Text="5" />
+                    <StackPanel Grid.Row="5" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="5" />
                         </Border>
 
-                        <TextBlock                            
-                            Text="Заберите сдачу или продолжайте покупки"
-                            Style="{StaticResource InstructionTextBlockStyle}"/>                    </StackPanel>
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}"
+                                   Width="220"
+                                   TextAlignment="Left"
+                                   Text="Заберите сдачу или продолжайте покупки"/>
+                    </StackPanel>
                 </Grid>
 
                 <controls:NumberPanel
@@ -213,10 +195,10 @@
                     OkClickCommand="{Binding OkCommand}"
                     ScreenText="{Binding DisplayText, Mode=TwoWay}" />
 
-                <Grid
-                    Grid.Row="2"
-                    Margin="0,8,0,0"
-                    VerticalAlignment="Bottom">
+                <Grid Grid.Row="2"
+                      Margin="0,8,0,0"
+                      VerticalAlignment="Bottom">
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -245,6 +227,7 @@
                             CommandParameter="5"
                             Content="5"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="1"
                             Margin="2,0,2,4"
@@ -252,6 +235,7 @@
                             CommandParameter="10"
                             Content="10"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="2"
                             Margin="2,0,2,4"
@@ -259,6 +243,7 @@
                             CommandParameter="50"
                             Content="50"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="3"
                             Margin="2,0,2,4"
@@ -266,6 +251,7 @@
                             CommandParameter="100"
                             Content="100"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="4"
                             Margin="2,0,0,4"
