@@ -40,6 +40,13 @@ public partial class App : Application
     {
         await appHost.StartAsync();
 
+        var factory = appHost.Services.GetRequiredService<IDbContextFactory<VendingDbContext>>();
+
+        await using (var ctx = await factory.CreateDbContextAsync())
+        {
+            await ctx.Database.MigrateAsync();
+        }
+
         var window = appHost.Services.GetRequiredService<MainWindow>();
         window.Show();
 
