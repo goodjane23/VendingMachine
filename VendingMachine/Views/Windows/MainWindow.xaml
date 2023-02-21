@@ -122,133 +122,88 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <TextBlock
                         Grid.Row="0"
                         Margin="0,0,0,12"
-                        HorizontalAlignment="Center"
-                        FontSize="16"
-                        Foreground="Gray"
+                        Style="{StaticResource ShowcaseTextBlockStyle}"
                         Text="-= INSTRUCTION =-" />
 
                     <StackPanel
                         Grid.Row="1"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="1" />
                         </Border>
 
                         <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
                             Text="Внесите деньги"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
 
                     <StackPanel
                         Grid.Row="2"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            VerticalAlignment="Center"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="2" />
                         </Border>
 
                         <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
                             Text="Введите номер товара на панели"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
-
+                    
                     <StackPanel
                         Grid.Row="3"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="3" />
                         </Border>
 
                         <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Нажмите кнопку PUSH"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                            Text="Нажмите кнопку OK" 
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
 
                     <StackPanel
                         Grid.Row="4"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="4" />
                         </Border>
 
                         <TextBlock
-                            Width="220"
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Заберите сдачу или продолжайте покупки"
-                            TextAlignment="Left"
-                            TextWrapping="WrapWithOverflow" />
+                            Text="Нажмите кнопку PUSH"
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="5"
+                        Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border
+                            Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
+                                Text="5" />
+                        </Border>
+
+                        <TextBlock                            
+                            Text="Заберите сдачу или продолжайте покупки"
+                            Style="{StaticResource InstructionTextBlockStyle}"/>                    </StackPanel>
                 </Grid>
 
                 <controls:NumberPanel
