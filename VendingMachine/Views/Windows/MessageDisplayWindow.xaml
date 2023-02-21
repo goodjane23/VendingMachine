@@ -1,0 +1,20 @@
+﻿<Window x:Class="VendingMachine.Views.Windows.MessageDisplayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:VendingMachine.Views.Windows"
+        mc:Ignorable="d"
+        Title="MessageDisplayWindow"
+        Width="400"
+        Height="200"
+        Icon="pack://application:,,,/Resources/Images/vending-icon.png"
+        Style="{StaticResource WindowStyle}"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock x:Name="messageText"
+                   Style="{StaticResource InformationTextBlockStyle}"
+                   TextAlignment="Center"
+                   TextWrapping="WrapWithOverflow"/>
+    </Grid>
+</Window>

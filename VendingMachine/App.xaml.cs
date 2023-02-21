@@ -27,6 +27,7 @@ public partial class App : Application
         services.AddSingleton<MainWindow>();
         
         services.AddWindowFactory<ProductPreviewWindow>();
+        services.AddWindowFactory<MessageDisplayWindow>();
         
         services.AddSingleton<MainWindowViewModel>();
 

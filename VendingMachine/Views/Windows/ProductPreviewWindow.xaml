@@ -19,21 +19,14 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image
-            x:Name="productIcon"
-            Grid.Row="0"
-            Margin="8"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" />
+        <Image Grid.Row="0"
+               x:Name="productIcon"
+               Margin="8"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
 
-        <TextBlock
-            x:Name="productName"
-            Grid.Row="1"
-            Margin="8"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontFamily="pack://application:,,,/Resources/Fonts/#Iceland"
-            FontSize="24"
-            Foreground="Gray" />
+        <TextBlock Grid.Row="1"
+                   Style="{StaticResource InformationTextBlockStyle}"
+                   x:Name="productName"/>
     </Grid>
 </Window>
