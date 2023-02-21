@@ -32,13 +32,16 @@ public partial class MainWindowViewModel : ObservableObject
     
     private readonly IVendingService vendingService;
     private readonly WindowFactory<ProductPreviewWindow> previewWindowFactory;
+    private readonly WindowFactory<MessageDisplayWindow> displayWindowFactory;
 
     public MainWindowViewModel(
         IVendingService vendingService,
-        WindowFactory<ProductPreviewWindow> previewWindowFactory)
+        WindowFactory<ProductPreviewWindow> previewWindowFactory,
+        WindowFactory<MessageDisplayWindow> displayWindowFactory)
     {
         this.vendingService = vendingService;
         this.previewWindowFactory = previewWindowFactory;
+        this.displayWindowFactory = displayWindowFactory;
 
         ShowcaseItems = new ObservableCollection<Product>(vendingService.GetAllProducts().Result);
 
@@ -61,7 +64,9 @@ public partial class MainWindowViewModel : ObservableObject
         }
         catch (Exception ex)
         {
-            MessageBox.Show(ex.Message, "Ошибка!");
+            var window = displayWindowFactory.Create();
+            window.ShowMessage("Ошибка!", ex.Message);
+
             return;
         }
 
