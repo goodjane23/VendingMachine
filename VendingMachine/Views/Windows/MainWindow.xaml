@@ -88,11 +88,10 @@
                                             Text="{Binding Price, StringFormat={}{0}$}" />
                                     </Grid>
 
-                                    <Separator
-                                        Grid.Row="2"
-                                        Width="100"
-                                        Height="5"
-                                        Background="Brown" />
+                                    <Separator Grid.Row="2"
+                                               Width="100"
+                                               Height="5"
+                                               Background="Brown" />
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -122,132 +121,70 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock
-                        Grid.Row="0"
-                        Margin="0,0,0,12"
-                        HorizontalAlignment="Center"
-                        FontSize="16"
-                        Foreground="Gray"
-                        Text="-= INSTRUCTION =-" />
+                    <TextBlock Grid.Row="0"
+                               Margin="0,0,0,12"
+                               Style="{StaticResource ShowcaseTextBlockStyle}"
+                               Text="-= INSTRUCTION =-" />
 
-                    <StackPanel
-                        Grid.Row="1"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
-                        <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
-                                Text="1" />
+                    <StackPanel Grid.Row="1" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="1"/>
                         </Border>
 
-                        <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Внесите деньги"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}" Text="Внесите деньги"/>
                     </StackPanel>
 
-                    <StackPanel
-                        Grid.Row="2"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
-                        <Border
-                            Width="30"
-                            Height="30"
-                            VerticalAlignment="Center"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
-                                Text="2" />
+                    <StackPanel Grid.Row="2" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="2" />
                         </Border>
 
-                        <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Введите номер товара на панели"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}"
+                                   Text="Введите номер товара на панели"/>
                     </StackPanel>
-
+                    
                     <StackPanel
                         Grid.Row="3"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="3" />
                         </Border>
 
                         <TextBlock
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Нажмите кнопку PUSH"
-                            TextAlignment="Center"
-                            TextWrapping="WrapWithOverflow" />
+                            Text="Нажмите кнопку OK" 
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
                     </StackPanel>
 
                     <StackPanel
                         Grid.Row="4"
-                        Margin="0,4,0,4"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal">
+                        Style="{StaticResource InstructionStackPanelStyle}">
                         <Border
-                            Width="30"
-                            Height="30"
-                            BorderBrush="Gray"
-                            BorderThickness="1"
-                            CornerRadius="15">
+                            Style="{StaticResource InstructionBorderStyle}">
                             <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                FontSize="16"
-                                Foreground="Gray"
+                                Style="{StaticResource ShowcaseTextBlockStyle}"
                                 Text="4" />
                         </Border>
 
                         <TextBlock
-                            Width="220"
-                            Margin="8,0,0,0"
-                            VerticalAlignment="Center"
-                            FontSize="13"
-                            Foreground="Gray"
-                            Text="Заберите сдачу или продолжайте покупки"
-                            TextAlignment="Left"
-                            TextWrapping="WrapWithOverflow" />
+                            Text="Нажмите кнопку PUSH"
+                            Style="{StaticResource InstructionTextBlockStyle}"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Style="{StaticResource InstructionStackPanelStyle}">
+                        <Border Style="{StaticResource InstructionBorderStyle}">
+                            <TextBlock Style="{StaticResource ShowcaseTextBlockStyle}" Text="5" />
+                        </Border>
+
+                        <TextBlock Style="{StaticResource InstructionTextBlockStyle}"
+                                   Width="220"
+                                   TextAlignment="Left"
+                                   Text="Заберите сдачу или продолжайте покупки"/>
                     </StackPanel>
                 </Grid>
 
@@ -258,10 +195,10 @@
                     OkClickCommand="{Binding OkCommand}"
                     ScreenText="{Binding DisplayText, Mode=TwoWay}" />
 
-                <Grid
-                    Grid.Row="2"
-                    Margin="0,8,0,0"
-                    VerticalAlignment="Bottom">
+                <Grid Grid.Row="2"
+                      Margin="0,8,0,0"
+                      VerticalAlignment="Bottom">
+                    
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -290,6 +227,7 @@
                             CommandParameter="5"
                             Content="5"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="1"
                             Margin="2,0,2,4"
@@ -297,6 +235,7 @@
                             CommandParameter="10"
                             Content="10"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="2"
                             Margin="2,0,2,4"
@@ -304,6 +243,7 @@
                             CommandParameter="50"
                             Content="50"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="3"
                             Margin="2,0,2,4"
@@ -311,6 +251,7 @@
                             CommandParameter="100"
                             Content="100"
                             Style="{StaticResource CashButtonStyle}" />
+                        
                         <Button
                             Grid.Column="4"
                             Margin="2,0,0,4"
